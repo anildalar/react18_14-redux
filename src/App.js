@@ -1,10 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
+
+  //1. State/Hook
+  const d = useSelector((store)=>{
+    return store;
+  });
+  const dispatch = useDispatch()
+
+  //2. Function defiation
+
+
+  //3. Return statement
+
   return (
     <div className="App">
       <header className="App-header">
+        {console.log(d)}
+        {d.name}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,6 +32,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={ ()=>{ dispatch({type:"B"}) } }>Change Name</button>
       </header>
     </div>
   );
